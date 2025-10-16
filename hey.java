@@ -10,5 +10,6 @@ public static void main(String[] args) {
 }
 
 }
+}
 //}
   //if we do not see the length it would be error and if it want the value that would null as it does ot existrgh bvs
