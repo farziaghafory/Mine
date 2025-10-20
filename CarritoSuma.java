@@ -33,7 +33,7 @@ public class CarritoSuma {
         public String getNombre() { return nombre; }
 
         /** Getter for the product price: returns the price so we can sum or display it. */
-        public double getPrecio() { return precio; }
+        public double getPrecio() { return precio; } //  we do a method in here
 
         /**
          * toString override: when we print a Producto, format it like "Name - 12.34 €".
@@ -98,7 +98,7 @@ public class CarritoSuma {
          * - sc.nextLine() after nextInt() consumes the remainder newline so the next nextLine() works.
          * - We loop, prompt for name and price, and build each Producto into the array.
          */
-        /*
+        /* 
         System.out.print("How many products? ");
         int n = sc.nextInt();      // read number of products
         sc.nextLine();             // consume the leftover newline from nextInt()
