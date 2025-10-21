@@ -1,4 +1,43 @@
 
+public class ResultadosAtleti {
+
+    /**
+     * Representa un partido con rival y goles a favor/en contra.
+     */
+    static class Partido {
+        private final String rival;
+        private final int golesMarcados;  // a favor
+        private final int golesRecibidos; // en contra
+
+        /**
+         * Crea un nuevo partido.
+         *
+         * @param rival          nombre del equipo rival
+         * @param golesMarcados  goles a favor del Atlético
+         * @param golesRecibidos goles en contra del Atlético
+         */
+		public Partido(String rival, int golesMarcados, int golesRecibidos) {
+            this.rival = rival;
+            this.golesMarcados = golesMarcados;
+            this.golesRecibidos = golesRecibidos;
+        }
+
+        /** @return rival */
+        public String getRival() { return rival; }
+
+        /** @return goles a favor */
+        public int getGolesMarcados() { return golesMarcados; }
+
+        /** @return goles en contra */
+        public int getGolesRecibidos() { return golesRecibidos; }
+
+        @Override
+        public String toString() {
+            return String.format("vs %s (%d-%d)", rival, golesMarcados, golesRecibidos);
+        }
+    }
+
+    
     // ------------------------------
     // METHODS THAT USE MANY MATCHES
     // ------------------------------
@@ -96,5 +135,5 @@
         System.out.printf("TOTAL goals scored: %d | TOTAL goals received: %d%n",
                 marcados, recibidos);
     }
-}
 
+}
