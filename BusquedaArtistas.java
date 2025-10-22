@@ -1,5 +1,3 @@
-import java.util.Locale;
-import java.util.Scanner;
  
 public class BusquedaArtistas { 
     // MAIN CLASS (the whole program)
@@ -46,7 +44,7 @@ public static int indiceDe(Artista[] cartel, String nombreBuscado) {
 // 'nombreBuscado' is a VARIABLE (the name to search for)
  
 // Loop through the array
-for (int i = 0; i < cartel.length; i++) { // 'i' is a VARIABLE (loop counter)
+for (int i = 0; i < cartel.length; i++) { // 'i' is a VARIABLE loop counter
 // Compare artist names ignoring uppercase/lowercase
 if (cartel[i].getNombre().equalsIgnoreCase(nombreBuscado)) {
 // If found, return the index number
@@ -62,7 +60,7 @@ return -1;
 */
 public static boolean existe(Artista[] cartel, String nombreBuscado) {
 // Uses indiceDe() to check if the artist exists
-return indiceDe(cartel, nombreBuscado) != -1;
+return indiceDe(cartel, nombreBuscado) != -1; // exclamacion
 }
  
 /**
@@ -85,8 +83,8 @@ int j = 0; // VARIABLE (used to fill 'indices' array)
 // Second loop: store the indices
 for (int i = 0; i < cartel.length; i++) {
 if (cartel[i].getNombre().equalsIgnoreCase(nombreBuscado)) {
-indices[j] = i;
-j++;
+indices[j]  = i;
+j++; //counter to fill the array
 }
 }
  
