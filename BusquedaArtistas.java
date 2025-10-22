@@ -25,35 +25,36 @@ public class BusquedaArtistas {
     }
 
     // ------------------------------------------------------------
-    // MÉTODOS a IMPLEMENTAR
-    // ------------------------------------------------------------
+// METHODS TO IMPLEMENT
+// ------------------------------------------------------------
 
-    /**
-     * Devuelve el índice de la primera coincidencia por nombre (ignora mayúsculas).
-     * @param cartel 
-     * @param nombreBuscado 
-     * @return índice (0..n-1) o -1 si no existe
-     */
-    public static int indiceDe(Artista[] cartel, String nombreBuscado) {
-        // TODO:
-        // Recorre el array 'cartel' y compara cartel[i].getNombre()
-        // con 'nombreBuscado' usando equalsIgnoreCase.
-        // Si coincide, devuelve i. Si terminas el bucle sin encontrarlo, devuelve -1.
-        return -1;
-    }
+/*** Returns the index of the first match by name (case-insensitive).*
+ * @param cartel 
+ * @param nombreBuscado 
+ * @return index (0..n-1) or -1 if it does not exist*/
+public static int indiceDe(Artista[] cartel, String nombreBuscado) {
+     for (int i = 1; i < .length; i++) { // in here we have a if to compare all thing that we have
+    if (int[i].getGolesMarcados() > mejor.getGolesMarcados()) {
+                 // ...then this one becomes the new "best" match
+    // TODO:
+    // Iterate through the 'cartel' array and compare cartel[i].getNombre()
+    // with 'nombreBuscado' using equalsIgnoreCase.
+    // If it matches, return i. If the loop ends without finding it, return -1.
+    return -1;
 
-    /**
-     * Indica si existe un artista con ese nombre.
-     * @param cartel array de artistas
-     * @param nombreBuscado nombre a buscar
-     * @return true si existe, false en caso contrario
-     */
-    public static boolean existe(Artista[] cartel, String nombreBuscado) {
-        // TODO:
-        // Devuelve true si indiceDe(cartel, nombreBuscado) es distinto de -1.
-        // En caso contrario, false.
-        return false;
-    }
+
+/**
+ * Indicates whether an artist with that name exists.
+ * @param cartel array of artists
+ * @param nombreBuscado name to search for
+ * @return true if it exists, false otherwise
+ */
+public static boolean existe(Artista[] cartel, String nombreBuscado) {
+    // TODO:
+    // Return true if indiceDe(cartel, nombreBuscado) is not -1.
+    // Otherwise, return false.
+    return false;
+}
 
     /**
      * Devuelve un array con todos los índices donde el nombre coincide (ignora mayúsculas).
