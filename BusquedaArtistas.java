@@ -133,7 +133,7 @@ int count = 0; // VARIABLE (counter)
 // First pass: count how many match both conditions
 for (int i = 0; i < cartel.length; i++) {
 char firstLetter = Character.toLowerCase(cartel[i].getNombre().charAt(0));
-int seguidores = cartel[i].getSeguidoresMiles(); // VARIABLE (followers)
+int seguidores = cartel[i].getSeguidoresMiles(); // VARIABLE (followers) // not everyone did that
 if (firstLetter == inicialLower &&
 seguidores >= minSeguidoresMiles && seguidores <= maxSeguidoresMiles) {
 count++;
@@ -149,9 +149,14 @@ for (int i = 0; i < cartel.length; i++) {
 char firstLetter = Character.toLowerCase(cartel[i].getNombre().charAt(0));
 int seguidores = cartel[i].getSeguidoresMiles();
 if (firstLetter == inicialLower &&
-seguidores >= minSeguidoresMiles && seguidores <= maxSeguidoresMiles) {
+seguidores >= minSeguidoresMiles && seguidores <= maxSeguidoresMiles) {    /*This checks three things:
+
+Does the artist's name start with the desired letter?
+Does the artist have at least the minimum number of followers?
+Does the artist have at most the maximum number of followers?*/
 indices[j] = i;
-j++;
+j++;  /*If all the conditions are true, it saves the artist's position (i) in the indices array.
+Then it moves to the next spot in the indices array by increasing j. */
 }
 }
  
@@ -166,7 +171,10 @@ for (int idx : indices) { // 'idx' is a VARIABLE (each index from indices array)
 System.out.println(" - [" + idx + "] " + cartel[idx]); // prints artist info
 }
 }
- 
+ /* Note: cartel: a list of all artists.
+indices: a list of positions (numbers) that tell us which artists to show.*/ 
+/*2nd note: This loop goes through each number in the indices array.
+Each number (idx) is a position of an artist in the cartel list. */
 // ------------------------------------------------------------
 // MAIN METHOD (Program starts here)
 // ------------------------------------------------------------

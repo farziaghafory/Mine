@@ -1,0 +1,84 @@
+import java.util.Arrays;
+
+public class ArraysCopies {
+
+    
+    static String[] manualCopy(String[] source) {
+        return null; 
+    }
+
+  
+    static String[] toUpperCase(String[] source) {
+        return null; // this creat new with upper case
+    }
+
+    
+    static String[] copyWithClone(String[] source) {
+     
+        String[] copy = copyWithClone(source); 
+        System.out.println(Arrays.toString(copy));
+        return copy.clone(); // why we can not each it?
+    }
+
+
+    static String[] copyWithCopyOf(String[] source, int newSize) {
+        // call  it self
+        String[] copies = copyWithCopyOf(source, newSize); // if there is any infinit recursation and this goes to  all the new ones we have
+        return Arrays.copyOf(source, newSize); // This line is unreachable
+    }
+
+ 
+    static String[] subarray(String[] source, int from, int to) {
+        // going to check it from "from" and will get according "to" that
+
+
+        from = Math.max(0, from);
+        to = Math.min(origen.length, to);
+        if (from > to) from = to;
+        return Arrays.copyOfRange(origen, from, to); // copia de [from, to)
+        
+    }
+
+    
+    static void assertArray(String msg, String[] expected, String[] actual) {
+        boolean ok = Arrays.equals(expected, actual);
+        System.out.println((ok ? "OK   " : "ERROR ") + msg);
+        System.out.println("  expected: " + Arrays.toString(expected));
+        System.out.println("  actual  : " + Arrays.toString(actual));
+        System.out.println("----------------------");
+    }
+
+    public static void main(String[] args) {
+        String[] base = {"Intro", "Sunrise", "Neon", "Chill"};
+
+        System.out.println("Call: manualCopy(" + Arrays.toString(base) + ")");
+        assertArray("manualCopy",
+                base,
+                manualCopy(base));
+
+        System.out.println("Call: toUpperCase(" + Arrays.toString(base) + ")");
+        assertArray("toUpperCase",
+                new String[]{"INTRO", "SUNRISE", "NEON", "CHILL"},
+                toUpperCase(base));
+
+        System.out.println("Call: copyWithClone(" + Arrays.toString(base) + ")");
+        assertArray("copyWithClone",
+                base,
+                copyWithClone(base));
+
+        System.out.println("Call: copyWithCopyOf(" + Arrays.toString(base) + ", " + base.length + ")");
+        assertArray("copyOf same size",
+                base,
+                copyWithCopyOf(base, base.length));
+
+        System.out.println("Call: copyWithCopyOf(" + Arrays.toString(base) + ", " + (base.length + 1) + ")");
+        assertArray("copyOf expand with null",
+                new String[]{"Intro", "Sunrise", "Neon", "Chill", null},
+                copyWithCopyOf(base, base.length + 1));
+
+        System.out.println("Call: subarray(" + Arrays.toString(base) + ", 1, 3)");
+        assertArray("copyOfRange(1,3)",
+                new String[]{"Sunrise", "Neon"},
+                subarray(base, 1, 3));
+    }
+}
